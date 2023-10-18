@@ -1,5 +1,15 @@
 variable "project_key" {}
 
+terraform {
+  required_providers {
+    launchdarkly = {
+      source  = "launchdarkly/launchdarkly"
+      version = ">= 2.9.2"
+    }
+  }
+  required_version = ">= 1.3.0"
+}
+
 provider "launchdarkly" {}
 
 resource "launchdarkly_feature_flag" "release_storefront_flag" {
